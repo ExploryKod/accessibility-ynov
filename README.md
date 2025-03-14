@@ -118,5 +118,61 @@ Il existe des labels alternatifs pour les liens et boutons à n'utiliser que si 
 </html>
 ```
 
+## Les images et icones 
 
+```
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemple de gestion des images</title>
+    <style>
+        .icon {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        .home-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23007bff' d='M3 9l9-7 9 7Z M5 19h14v-14H5v14Zm2-11a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-10z'/%3E%3C/svg%3E");
+        }
+        
+        figure {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        img, svg {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Image avec alt descriptif -->
+    <img src="https://via.placeholder.com/400x300" 
+         alt="Paysage montagnard avec lac au soleil couchant" />
+
+    <!-- SVG avec aria-label -->
+    <svg width="50" height="50" aria-label="Logo de l'entreprise">
+        <circle cx="25" cy="25" r="20" fill="#007bff"/>
+        <text x="25" y="25" text-anchor="middle" dy=".35em" fill="white">E</text>
+    </svg>
+
+    <!-- Icône CSS avec aria-label -->
+    <span class="icon home-icon" role="img" aria-label="Accueil"></span>
+
+    <!-- Figure avec légende -->
+    <figure>
+        <img src="https://via.placeholder.com/400x300" 
+             alt="Vue détaillée d'une fleur sauvage">
+        <figcaption>
+            Une belle fleur sauvage photographiée au printemps
+        </figcaption>
+    </figure>
+</body>
+</html>
 
