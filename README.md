@@ -67,3 +67,56 @@ La distinction entre lien et bouton est impérative. Voici un exemple :
 </body>
 </html>
 ```
+
+Il existe des labels alternatifs pour les liens et boutons à n'utiliser que si on ne peux faire autrement. Les labels alternatifs sont essentiels pour les éléments interactifs qui ne sont pas suffisamment descriptifs :
+
+```
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemple de labels alternatifs</title>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        
+        /* Pour masquer visuellement le texte tout en le gardant accessible */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Lien avec icône et aria-label -->
+    <a href="/panier" aria-label="Accéder au panier d'achat">
+        🛒 Panier (3 articles)
+    </a>
+
+    <!-- Bouton avec aria-label -->
+    <button aria-label="Fermer cette fenêtre">
+        ×
+    </button>
+
+    <!-- Lien avec titre explicatif -->
+    <a href="/mentions-legales" title="Voir les conditions générales d'utilisation">
+        Mentions légales
+    </a>
+</body>
+</html>
+```
+
+
+
