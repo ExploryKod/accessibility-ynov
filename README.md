@@ -175,4 +175,64 @@ Il existe des labels alternatifs pour les liens et boutons à n'utiliser que si 
     </figure>
 </body>
 </html>
+```
+
+# SVG 
+
+## SVG Décoratifs/Illustratifs
+Utilisez aria-hidden="true" pour masquer l'élément aux lecteurs d'écran
+Ajoutez focusable="false" pour éviter les problèmes de navigation au clavier sous Internet Explorer
+Ne pas utiliser title, aria-label ou autres attributs d'accessibilité
+Exemple : icônes purement décoratives, bordures SVG, motifs de fond
+
+## SVG Informatifs Simples
+Ajoutez role="img" pour identifier l'élément comme une image
+Utilisez aria-label pour fournir une description concise
+Incluez focusable="false" pour la compatibilité IE
+Évitez les préfixes comme "Image : " dans les descriptions
+Exemple : icônes avec signification, graphiques simples
+
+## SVG Informatifs Complexes
+Utilisez role="img" et aria-label pour la description principale
+Fournissez une description détaillée accessible
+Indiquez dans l'aria-label où trouver la description détaillée
+Utilisez un système de toggle pour afficher/masquer les détails
+Exemple : graphiques complexes, diagrammes techniques
+
+## SVG comme Liens/Boutons
+Ajoutez role="img" pour identifier l'élément comme une image
+Utilisez aria-label pour décrire l'action
+Incluez focusable="false" pour la compatibilité IE
+Assurez-vous que l'élément est cliquable (<a> ou <button>)
+Exemple : icônes de navigation, boutons d'action
+
+### Exemple - SVG décoratif : nécessite un aria-hidden à true car ne doit pas être lu par un lecteur.
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>
+        <svg aria-hidden="true" focusable="false" width="24" height="24">
+            <!-- SVG décoratif -->
+            <path d="M12 2c-.69 0-1.73.32-2.28.91l-2.78 2.79c-.18.18-.18.42 0 .6l3 3c.18.18.42.18.6 0l3-3c.18-.18.18-.42 0-.6l-2.78-2.79C13.73 2.32 12.69 2 12 2zm0 16c-.69 0-1.73-.32-2.28-.91l-2.78-2.79c-.18-.18-.18-.42 0-.6l3-3c.18-.18.42-.18.6 0l3 3c.18.18.18.42 0 .6l-2.78 2.79c-.18.18-.32.91-.28.91zM12 7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 10c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3z"/>
+        </svg>
+        Messages d'erreur
+    </h2>
+</div>
+</body>
+</html>
+```
+
+
+
 
